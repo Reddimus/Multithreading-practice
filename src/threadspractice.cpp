@@ -75,6 +75,7 @@ void ThreadedAlgorithmsTest::in_order(const std::vector<std::function<std::strin
     // Create threads based on the input order
     for (const std::function<std::string()>& alg : algorithms)
     {
+        // Extract function pointer to determine which algorithm this is
         std::string (*const *targetFunction)() = alg.target<std::string(*)()>();
         if (!targetFunction) {
             std::cerr << "Error: Invalid function pointer." << std::endl;
@@ -85,7 +86,7 @@ void ThreadedAlgorithmsTest::in_order(const std::vector<std::function<std::strin
         {
             threads.emplace_back([&threadsPractice]()
             {
-                std::string algorithmOutput = algorithm1(); // Start work immediately
+                const std::string algorithmOutput = algorithm1(); // Start work immediately
                 threadsPractice.first([algorithmOutput](){ std::cout << algorithmOutput; });
             });
         }
@@ -93,7 +94,7 @@ void ThreadedAlgorithmsTest::in_order(const std::vector<std::function<std::strin
         {
             threads.emplace_back([&threadsPractice]()
             {
-                std::string algorithmOutput = algorithm2();
+                const std::string algorithmOutput = algorithm2();
                 threadsPractice.second([algorithmOutput]() { std::cout << algorithmOutput; });
             });
         }
@@ -101,7 +102,7 @@ void ThreadedAlgorithmsTest::in_order(const std::vector<std::function<std::strin
         {
             threads.emplace_back([&threadsPractice]()
             {
-                std::string algorithmOutput = algorithm3();
+                const std::string algorithmOutput = algorithm3();
                 threadsPractice.third([algorithmOutput]() { std::cout << algorithmOutput; });
             });
         }

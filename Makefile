@@ -10,7 +10,7 @@ $(TARGET): $(SRC)
 	$(CXX) $(CXXFLAGS) $(SRC) -o $(TARGET)
 
 clean:
-	rm -f bin/$(TARGET)
+	rm -f $(TARGET)
 
 run: $(TARGET)
 	./$(TARGET)
