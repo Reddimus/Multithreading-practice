@@ -45,7 +45,11 @@ void ThreadsPractice::third(std::function<void()> algorithm3COut)
 
 std::string algorithm1()
 {
-    for (int i = 0; i < N_MAX; ++i);
+    for (int i = 0; i < N_MAX; ++i) {
+        for (int j = 0; j < N_MAX; ++j) {
+            for (int k = 0; k < N_MAX; ++k);
+        }
+    }
     return "A1 ";   
 }
 
@@ -59,11 +63,7 @@ std::string algorithm2()
 
 std::string algorithm3()
 {
-    for (int i = 0; i < N_MAX; ++i) {
-        for (int j = 0; j < N_MAX; ++j) {
-            for (int k = 0; k < N_MAX; ++k);
-        }
-    }
+    for (int i = 0; i < N_MAX; ++i);
     return "A3 ";
 }
 

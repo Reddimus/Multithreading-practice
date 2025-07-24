@@ -6,9 +6,9 @@ A C++ project demonstrating thread synchronization and algorithm execution order
 
 This project implements a thread synchronization mechanism that ensures three algorithms (A1, A2, A3) execute in a specific order regardless of the order in which their threads are created. The algorithms simulate different computational complexities:
 
-- **Algorithm 1 (A1)**: O(n) complexity - Simple loop
-- **Algorithm 2 (A2)**: O(n²) complexity - Nested loops
-- **Algorithm 3 (A3)**: O(n³) complexity - Triple nested loops
+- **Algorithm 1 (A1)**: O(n³) complexity - Triple nested loops
+- **Algorithm 2 (A2)**: O(n²) complexity - Double nested loops
+- **Algorithm 3 (A3)**: O(n) complexity - Simple loop
 
 ## Features
 
